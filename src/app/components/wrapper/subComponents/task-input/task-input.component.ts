@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MatChip } from '@angular/material/chips';
+import { MatDialogRef } from '@angular/material/dialog';
 import { Tag } from 'src/app/model/tags';
 import { Task } from 'src/app/model/task';
 import { ApiService } from 'src/app/services/api.service';
@@ -26,9 +27,11 @@ export class TaskInputComponent implements OnInit {
 
   public stringArray : string[] = [];
 
-  public taskModel = {name: "", priority: 0}
+  public taskModel = {name: "", priority: 0};
 
-  constructor(private api2S: Api2Service) { }
+  //public insertTaskFromDialog?: Task;
+
+  constructor(private api2S: Api2Service, public dialogRef: MatDialogRef<TaskInputComponent>) { }
 
   ngOnInit(){
     this.api2S.stringArray$.subscribe(tags => this.tagArray = tags);
@@ -41,9 +44,14 @@ export class TaskInputComponent implements OnInit {
       if(!b){
         prompt("errore nel backend");
       } else {
-        this.api2S.addActiveTask(b)
+        this.api2S.addActiveTask(b);
+        //this.insertTaskFromDialog = b;
       }
     })
+  }
+
+  onNoClick(): void {
+    this.dialogRef.close();
   }
 
   selection(value: MatChip){

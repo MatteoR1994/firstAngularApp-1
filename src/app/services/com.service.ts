@@ -11,4 +11,14 @@ export class ComService {
   constructor() {
     this.isDrawerOpen = new BehaviorSubject<boolean>(false);
   }
+
+  checkLocation(): boolean {
+    const currentPathName = window.location.pathname;
+    if (currentPathName === '/welcome') {
+      return true;
+    } else {
+      return false;
+    }
+  }
+
 }

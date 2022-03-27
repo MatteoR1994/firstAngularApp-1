@@ -2,3 +2,6 @@
 <router-outlet></router-outlet>
 <app-footer></app-footer>
 
+<button *ngIf="!isWelcome" (click)="openDialog()" class="button" mat-fab color="primary" aria-label="Example icon button with a delete icon">
+    <mat-icon>add</mat-icon>
+</button>

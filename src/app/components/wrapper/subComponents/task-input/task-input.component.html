@@ -1,5 +1,7 @@
-<div class="container"><mat-chip-list multiple aria-label="Fish selection">
-    <mat-chip color="primary" *ngFor="let tag of tagArray" #c="matChip" (click)="selection(c)">{{tag}}</mat-chip>
+<h1 mat-dialog-title>Inserisci i dati del nuovo task</h1>
+<div mat-dialog-content>
+  <mat-chip-list multiple aria-label="Fish selection">
+    <mat-chip class="chipTag" color="primary" *ngFor="let tag of tagArray" #c="matChip" (click)="selection(c)">{{tag}}</mat-chip>
       <!-- <mat-chip #c="matChip" (click)="selection(c)" color="primary">Lavoro</mat-chip>
       <mat-chip color="primary">Casa</mat-chip>
       <mat-chip color="primary">Spesa</mat-chip>
@@ -23,12 +25,16 @@
         </button>
     </mat-form-field>
       
-    <button (click)="saveTask()" class="button" mat-mini-fab color="primary" aria-label="Example icon button with a menu icon">
+    <!-- <button (click)="saveTask()" class="button" mat-mini-fab color="primary" aria-label="Example icon button with a menu icon">
         <mat-icon>add</mat-icon>
-    </button>
+    </button> -->
 <!-- 
     <div>
       <span *ngFor="let tag of tags" (click)="selectTag(tag)" ngclass="tag.isSelected ? 'chip-selected' : 'chip-unselected'" >{{tag.name}}</span>
     </div> -->
 
-</div>
+  </div>
+  <div mat-dialog-actions>
+      <button mat-button (click)="onNoClick()">Cancel</button>
+      <button mat-button [mat-dialog-close]="true" (click)="saveTask()">INSERISCI</button>
+  </div>

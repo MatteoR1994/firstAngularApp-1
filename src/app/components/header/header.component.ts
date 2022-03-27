@@ -10,11 +10,14 @@ export class HeaderComponent implements OnInit {
 
   // @Output() public onMenuClicked: EventEmitter<any>;
 
+  public isWelcome = false;
+
   constructor(private comS: ComService) {
     // this.onMenuClicked = new EventEmitter();
   }
 
   ngOnInit(): void {
+    this.isWelcome = this.comS.checkLocation();
   }
 
   menuClick(): void{

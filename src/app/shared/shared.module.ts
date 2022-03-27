@@ -9,6 +9,8 @@ import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatInputModule } from '@angular/material/input'; 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatChipsModule } from '@angular/material/chips';
+import { MatDialogModule } from '@angular/material/dialog';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { FormsModule } from "@angular/forms";
 
 
@@ -25,6 +27,8 @@ import { FormsModule } from "@angular/forms";
     MatSidenavModule,
     MatInputModule,
     MatChipsModule,
+    MatDialogModule,
+    MatSnackBarModule,
     FormsModule
   ],
   exports: [
@@ -36,6 +40,8 @@ import { FormsModule } from "@angular/forms";
     MatSidenavModule,
     MatInputModule,
     MatChipsModule,
+    MatDialogModule,
+    MatSnackBarModule,
     FormsModule
   ]
 })

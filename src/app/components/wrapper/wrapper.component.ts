@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { timer } from 'rxjs';
 import { ComService } from 'src/app/services/com.service';
 
 @Component({
@@ -17,7 +16,6 @@ export class WrapperComponent implements OnInit {
     this.comS.isDrawerOpen.subscribe(isOpen => {
       this.drawerOpen = isOpen;
     });
-
   }
 
 }
