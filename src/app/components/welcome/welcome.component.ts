@@ -1,4 +1,4 @@
-import { Component, Input, OnChanges, OnDestroy, OnInit, SimpleChanges } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-welcome',
@@ -7,7 +7,6 @@ import { Component, Input, OnChanges, OnDestroy, OnInit, SimpleChanges } from '@
 })
 export class WelcomeComponent implements OnInit, OnDestroy {
 
-
   constructor() {
     console.log("constructor")
   }
@@ -15,7 +14,6 @@ export class WelcomeComponent implements OnInit, OnDestroy {
   // ngOnChanges(changes: SimpleChanges): void {
   //     console.log("on change")
   // }
-
 
   ngOnInit(): void {
     console.log("on Init");

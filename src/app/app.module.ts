@@ -11,7 +11,6 @@ import { SharedModule } from './shared/shared.module';
 import { WelcomeModule } from './components/welcome/welcome/welcome.module';
 import { WrapperModule } from './components/wrapper/wrapper/wrapper.module';
 
-
 @NgModule({
   declarations: [
     AppComponent,

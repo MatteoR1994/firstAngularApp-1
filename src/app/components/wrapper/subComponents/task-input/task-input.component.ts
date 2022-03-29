@@ -3,7 +3,6 @@ import { MatChip } from '@angular/material/chips';
 import { MatDialogRef } from '@angular/material/dialog';
 import { Tag } from 'src/app/model/tags';
 import { Task } from 'src/app/model/task';
-import { ApiService } from 'src/app/services/api.service';
 import { Api2Service } from 'src/app/services/api2.service';
 
 @Component({
@@ -31,6 +30,7 @@ export class TaskInputComponent implements OnInit {
 
   //public insertTaskFromDialog?: Task;
 
+  // eslint-disable-next-line no-unused-vars
   constructor(private api2S: Api2Service, public dialogRef: MatDialogRef<TaskInputComponent>) { }
 
   ngOnInit(){

@@ -1,4 +1,4 @@
-import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { Component, OnInit} from '@angular/core';
 import { ComService } from 'src/app/services/com.service';
 
 @Component({
@@ -12,6 +12,7 @@ export class HeaderComponent implements OnInit {
 
   public isWelcome = false;
 
+  // eslint-disable-next-line no-unused-vars
   constructor(private comS: ComService) {
     // this.onMenuClicked = new EventEmitter();
   }

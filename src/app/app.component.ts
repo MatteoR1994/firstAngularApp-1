@@ -14,6 +14,7 @@ export class AppComponent implements OnInit {
 
   public isWelcome = false;
 
+  // eslint-disable-next-line no-unused-vars
   constructor(private comS: ComService, public dialog: MatDialog, private _snackBar: MatSnackBar) {}
 
   ngOnInit(): void {    

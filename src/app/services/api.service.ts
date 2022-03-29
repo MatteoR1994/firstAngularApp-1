@@ -1,19 +1,18 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { BehaviorSubject, catchError, first, map, Observable, of } from 'rxjs';
+import { BehaviorSubject, catchError, map, Observable, of } from 'rxjs';
 import { Task } from "../model/task";
 
 @Injectable({
   providedIn: 'root'
 })
 export class ApiService {
-
-
   
   private readonly API_URL = 'https://6229de55be12fc4538aa6c8e.mockapi.io/task';
 
   public allTasks$ = new BehaviorSubject<Task[]>([]);
 
+  // eslint-disable-next-line no-unused-vars
   constructor(private http: HttpClient) {
     this.getAllTasks();
   }
@@ -49,22 +48,22 @@ export class ApiService {
   createTask(task: Task): Observable<boolean>{
     const httpOptions = {headers: new HttpHeaders({"Content-Type": "application/json"})}
     return this.http.post<Task>(this.API_URL, task, httpOptions).pipe(
-      map(task => {
+      map(() => {
         this.getAllTasks();
         return true;
       }),
-      catchError(error => of(false))
+      catchError(() => of(false))
     )
   }
 
   deleteTask(taskId: string): Observable<boolean>{
     const httpOptions = {headers: new HttpHeaders({"Content-Type": "application/json"})}
     return this.http.delete<any>(this.API_URL + "/" + taskId, httpOptions).pipe(
-      map(response => {
+      map(() => {
         this.getAllTasks();
         return true;
       }),
-      catchError(error => of(false))
+      catchError(() => of(false))
     )
   }
 
@@ -73,11 +72,11 @@ export class ApiService {
     const httpOptions = {headers: new HttpHeaders({"Content-Type": "application/json"})}
     task.doneDate = new Date();
     return this.http.put<Task>(this.API_URL + "/" + task.id, task.toDatabaseModel() ,httpOptions).pipe(
-      map(task => {
+      map(() => {
         this.getAllTasks();
         return true;
       }),
-      catchError(error => of(false))
+      catchError(() => of(false))
     )
   }
 

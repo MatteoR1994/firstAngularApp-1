@@ -8,8 +8,6 @@ import { StatisticsModule } from '../subComponents/statistics/statistics/statist
 import { TaskInputModule } from '../subComponents/task-input/task-input/task-input.module';
 import { ToDoListModule } from '../subComponents/to-do-list/to-do-list/to-do-list.module';
 
-
-
 @NgModule({
   declarations: [
     WrapperComponent
